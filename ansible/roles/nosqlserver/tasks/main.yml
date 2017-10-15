@@ -1,0 +1,14 @@
+---
+    
+- name: Instalar Redis
+  apt: pkg=redis-server state=latest
+  sudo: true
+
+- name: Iniciar Redis
+  service: name=redis-server state=started enabled=yes
+  sudo: true
+
+- name: Configuraion de Servidor redis
+  template: src=redis.conf.j2 dest=/etc/redis/redis.conf owner=root group=root mode=0644
+  sudo: true
+  notify: Redis Restart

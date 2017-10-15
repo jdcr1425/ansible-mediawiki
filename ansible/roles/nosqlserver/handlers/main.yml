@@ -1,0 +1,7 @@
+---
+# handlers file for nosqlserver
+
+
+- name: Redis Restart
+  service: name=redis-server state=restarted enabled=yes
+  sudo: true

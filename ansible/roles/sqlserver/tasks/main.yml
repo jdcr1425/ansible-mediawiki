@@ -1,0 +1,25 @@
+---
+# tasks file for nosqlserver
+
+
+
+- name: Actualizar todos los packetes a la ultima version
+  apt:
+    upgrade: dist
+
+- name: Establecer contraseña rot MySQL Antes de instalar
+  debconf: name='mysql-server' question='mysql-server/root_password' value='123456' vtype='password'
+      
+- name: Confirmar contraseña root MySQL antes de instalar
+  debconf: name='mysql-server' question='mysql-server/root_password_again' value='123456' vtype='password'
+       
+- name: Instalar MySQL
+  apt: package={{ item }} state=installed force=yes update_cache=yes cache_valid_time=3600
+  when: ansible_os_family == 'Debian'
+  with_items:
+     - mysql-server
+     - mysql-client
+     - python-mysqldb
+          
+- name: Iniciar servicio Mysql
+  service: name=mysql state=started

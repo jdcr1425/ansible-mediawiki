@@ -1,0 +1,9 @@
+---
+# defaults file for moodle
+
+moodle_user: "moodle"
+moodle_path: "/moodle"
+moodle_dir: "/var/www/html/moodle"
+moodle_docs: "{{ moodle_path }}/Files"
+moodle_version: "MOODLE_33_STABLE"
+#moodle_domain: "your-moodle.edu"
