@@ -44,6 +44,8 @@ y deberia salir esto :
 
 ansible-playbook -i ../hosts mediawiki.yml
 
+<h3>Clave de actualizacion : cca018cf3ac53a62</h3>
+
 <h1>setupplaybooks.sh nos ayuda con este proceso</h1>
 
 

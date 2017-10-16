@@ -2,7 +2,7 @@
 url: https://releases.wikimedia.org/mediawiki/1.29/mediawiki-1.29.1.tar.gz
 path: /opt/mediawiki-1.29.1
 apache_path: /var/www/html/mediawiki
-media_config_file: /var/www/html/media/LocalSettings.php
+media_config_file: /var/www/html/mediawiki/LocalSettings.php
 #Variables de configuración para media wiki
 mysql_media_usr: "mediawikiuser"
 mysql_media_pwd: "abc"

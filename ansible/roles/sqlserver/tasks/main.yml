@@ -7,11 +7,19 @@
   apt:
     upgrade: dist
 
-- name: Establecer contraseña rot MySQL Antes de instalar
-  debconf: name='mysql-server' question='mysql-server/root_password' value='123456' vtype='password'
-      
-- name: Confirmar contraseña root MySQL antes de instalar
-  debconf: name='mysql-server' question='mysql-server/root_password_again' value='123456' vtype='password'
+- name:  contraseña root para MySQL
+  debconf:
+   name: mysql-server
+   question: mysql-server/root_password
+   value: 123456
+   vtype: password
+
+- name: Confirmando contraseña root de MySQL
+  debconf:
+   name: mysql-server
+   question: mysql-server/root_password_again
+   value: 123456
+   vtype: password
        
 - name: Instalar MySQL
   apt: package={{ item }} state=installed force=yes update_cache=yes cache_valid_time=3600
@@ -29,16 +37,21 @@
    owner: root
    group: root
    mode: 0644
-   
-- name: creando usuario para la BD
-  mysql_user: login_user=root login_password=123456  name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present
-   
+
+- name: Habilitando servicio Mysql al inicio del host
+  service: name=mysql state=started enabled=yes
+
 - name: Creando base de datos mediawiki
   mysql_db:
     login_user: root
     login_password: 123456
     name: "mediawiki"
     state: present
+   
+- name: creando usuario para la BD
+  mysql_user: login_user=root login_password=123456  name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present
+   
+
           
 - name: Iniciar servicio Mysql
   service: name=mysql state=started
