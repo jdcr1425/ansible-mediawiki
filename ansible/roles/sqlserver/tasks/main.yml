@@ -20,6 +20,25 @@
      - mysql-server
      - mysql-client
      - python-mysqldb
+     
+     
+- name: Añadiendo configuracion
+  template:
+   src: mysqld.cnf.j2
+   dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+   owner: root
+   group: root
+   mode: 0644
+   
+- name: creando usuario para la BD
+  mysql_user: login_user=root login_password=123456  name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present
+   
+- name: Creando base de datos mediawiki
+  mysql_db:
+    login_user: root
+    login_password: 123456
+    name: "mediawiki"
+    state: present
           
 - name: Iniciar servicio Mysql
   service: name=mysql state=started
