@@ -43,3 +43,5 @@ y deberia salir esto :
 ### -Intalamos MediaWiki en el wiki_web_server
 
 ansible-playbook -i ../hosts mediawiki.yml
+
+Despues de instalado nos dirigimos a esta url en nuestro navegador http://localhost/media/mw-config/index.php.
