@@ -44,4 +44,7 @@ y deberia salir esto :
 
 ansible-playbook -i ../hosts mediawiki.yml
 
+<h1>setupplaybooks.sh nos ayuda con este proceso</h1>
+
+
 Despues de instalado nos dirigimos a esta url en nuestro navegador http://localhost/media/mw-config/index.php.
