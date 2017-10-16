@@ -1,0 +1,5 @@
+- name: Configurando servidor web con mediawiki
+  hosts: web
+  remote_user: root
+  roles:
+    - mediawiki
