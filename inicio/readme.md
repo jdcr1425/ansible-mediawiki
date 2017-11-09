@@ -19,7 +19,7 @@ Ahora debes crear un conjunto de maquinas para el despliegue, se crearán autom�
 
 Opción 1: edita el archivo /etc/hosts y adiciona 2 alias a localhost
 
-127.0.0.1       wiki_web_server wiki_mysql_server 
+127.0.0.1       wiki_web_server wiki_mysql_server</br>
 Opción 2: adición automática en el archivo de hosts del sistema
 
 echo "127.0.0.1 wiki_web_server wiki_mysql_server" | sudo tee -a /etc/hosts
