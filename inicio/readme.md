@@ -1,7 +1,7 @@
 <h1>Configuraciones básicas y creación de dockers<h1>
 
 
-<h1>Para hacer la configuracion y creacion de nuestros dockers podemos usar el script que esta en esta carpeta, llamado  construir_docker.sh el cual, automatizaria este proceso. Sino, podemos seguir los pasos que estan a continuacion</h1>
+<h3>Para hacer la configuracion y creacion de nuestros dockers podemos usar el script que esta en esta carpeta, llamado  construir_docker.sh el cual, automatizaria este proceso. Sino, podemos seguir los pasos que estan a continuacion</h3>
 
 <h2>Primer paso</h2>
 
