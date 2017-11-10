@@ -23,6 +23,9 @@ docker run -d -P --name wiki_web_server -p 2221:22 -p 80:80 server:16.04
 
 docker run -d -P --name wiki_mysql_server -p 2222:22 -p 3306:3306 server:16.04 
 
+
+Estas serian nuestras 2 maquinas creadas:
+
 0.0.0.0:3306->3306/tcp, 0.0.0.0:2222->22/tcp   wiki_mysql_server</br>
 0.0.0.0:2221->22/tcp, 0.0.0.0:8000->80/tcp     wiki_web_server
 
